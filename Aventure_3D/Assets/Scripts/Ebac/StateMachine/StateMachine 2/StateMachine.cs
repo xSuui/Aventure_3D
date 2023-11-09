@@ -3,62 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 
-
-public class Test
+namespace Ebac.StateMachine
 {
-    public enum Test2
+
+    public class StateMachine<T> where T : System.Enum
     {
-        NONE
-    }
+        // chave
+        public Dictionary<T, StateBase> dictionaryState;
+        public float timeToStartGame = 1f;
 
-    public void Aa()
-    {
-        StateMachine<Test2> stateMachine = new StateMachine<Test2>();
+        private StateBase _currentState;
 
-        stateMachine.RegisterStates(Test.Test2.NONE, new StateBase());
-    }
-}
+        public StateBase CurrentState
+        { 
+            get { return _currentState; }
+        }
 
+        public void Init()
+        {
+            dictionaryState = new Dictionary<T, StateBase>();
+        }
 
-public class StateMachine<T> where T : System.Enum
-{
-    // chave
-    public Dictionary<T, StateBase> dictionaryState;
-    public float timeToStartGame = 1f;
-
-    private StateBase _currentState;
-
-    public StateBase CurrentState
-    { 
-        get { return _currentState; }
-    }
-
-    public void Init()
-    {
-        dictionaryState = new Dictionary<T, StateBase>();
-    }
-
-    public void RegisterStates(T typeEnum, StateBase state)
-    {
-        dictionaryState.Add(typeEnum, state);
-    }
+        public void RegisterStates(T typeEnum, StateBase state)
+        {
+            dictionaryState.Add(typeEnum, state);
+        }
 
 
-    public void SwitchState(T state)
-    {
+        public void SwitchState(T state)
+        {
 
-        if (_currentState != null) _currentState.OnStateExit();
+            if (_currentState != null) _currentState.OnStateExit();
 
-        _currentState = dictionaryState[state];
+            _currentState = dictionaryState[state];
 
-        _currentState.OnStateEnter();
+            _currentState.OnStateEnter();
 
-    }
+        }
 
 
-    public void Update()
+        public void Update()
 
-    {
-        if (_currentState != null) _currentState.OnStateStay();
+        {
+            if (_currentState != null) _currentState.OnStateStay();
+        }
     }
 }
