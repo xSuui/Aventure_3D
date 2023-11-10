@@ -10,8 +10,11 @@ public class Player : MonoBehaviour
     public float speed = 1f;
     public float turnSpeed = 1f;
     public float gravity = -9.8f;
+    public float jumpSpeed = 15f;
 
     private float vSpeed = 0f;
+
+    public KeyCode jumpKeycode = KeyCode.Space;
 
     void Update()
     {
@@ -20,7 +23,18 @@ public class Player : MonoBehaviour
         var inputAxisVertical = Input.GetAxis("Vertical");
         var speedVector = transform.forward * inputAxisVertical * speed;
 
-        vSpeed = gravity * Time.deltaTime;
+
+        if (characterController.isGrounded)
+        {
+            vSpeed = 0;
+            if (Input.GetKeyDown(jumpKeycode))
+            {
+                vSpeed = jumpSpeed;
+            }
+        }
+
+
+        vSpeed -= gravity * Time.deltaTime;
         speedVector.y = vSpeed;
 
         characterController.Move(speedVector * Time.deltaTime);
