@@ -1,63 +1,88 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GunBase : MonoBehaviour
 {
 
-        public ProjectileBase prefabProjectile;
-        
-        public Transform positionToShoot;
-        public float timeBetweenShoot = .3f;
-       
-        private Coroutine _currentCoroutine;
+    public ProjectileBase prefabProjectile;
 
-        private bool isShooting = false; // Adiciona uma variável para rastrear se está atirando.
+    public Transform positionToShoot;
+    public float timeBetweenShoot = .3f;
+
+    private Coroutine _currentCoroutine;
+
+    private bool isShooting = false; // Adiciona uma variável para rastrear se está atirando.
 
 
-
-    void Update()
+    #region extras
+    /*void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                isShooting = true; // Indica que estamos atirando.
+            isShooting = true; // Indica que estamos atirando.
 
-                // Iniciamos a coroutine apenas uma vez.
-                if (_currentCoroutine == null)
-                {
-                    _currentCoroutine = StartCoroutine(StarShoot());
-                }
-            }
-            else if (Input.GetKeyUp(KeyCode.Mouse0))
+            // Iniciamos a coroutine apenas uma vez.
+            if (_currentCoroutine == null)
             {
-                isShooting = false; // Indica que não estamos atirando mais.
-
-                if (_currentCoroutine != null)
-                {
-                    StopCoroutine(_currentCoroutine);
-                    _currentCoroutine = null; // Garantimos que a coroutine seja interrompida e a referência limpa.
-                }
+                _currentCoroutine = StartCoroutine(StarShoot());
             }
         }
-
-        IEnumerator StarShoot()
+        else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            while (isShooting) // Verificamos a variável isShooting em vez de true.
+            isShooting = false; // Indica que não estamos atirando mais.
+
+            if (_currentCoroutine != null)
             {
-                Shoot();
-                yield return new WaitForSeconds(timeBetweenShoot);
+                StopCoroutine(_currentCoroutine);
+                _currentCoroutine = null; // Garantimos que a coroutine seja interrompida e a referência limpa.
             }
         }
+    }*/
+    #endregion 
 
-        public void Shoot()
+    IEnumerator ShootCoroutine()
+    {
+        while (isShooting) // Verificamos a variável isShooting em vez de true.
         {
-    
-            
-            var projectile = Instantiate(prefabProjectile);
-            projectile.transform.position = positionToShoot.position;
-            projectile.transform.rotation = positionToShoot.rotation;
+            Shoot();
+            yield return new WaitForSeconds(timeBetweenShoot);
         }
     }
+
+    public void Shoot()
+    {
+
+
+        var projectile = Instantiate(prefabProjectile);
+        projectile.transform.position = positionToShoot.position;
+        projectile.transform.rotation = positionToShoot.rotation;
+    }
+
+    public void startShoot()
+    {
+        StopShoot();
+
+        isShooting = true; // Indica que estamos atirando.
+
+        // Iniciamos a coroutine apenas uma vez.
+        if (_currentCoroutine == null)
+        {
+            _currentCoroutine = StartCoroutine(ShootCoroutine());
+        }
+    }
+
+    public void StopShoot()
+    {
+        isShooting = false; // Indica que não estamos atirando mais.
+
+        if (_currentCoroutine != null)
+        {
+            StopCoroutine(_currentCoroutine);
+            _currentCoroutine = null; // Garantimos que a coroutine seja interrompida e a referência limpa.
+        }
+
+    }
+}
 
 
 
