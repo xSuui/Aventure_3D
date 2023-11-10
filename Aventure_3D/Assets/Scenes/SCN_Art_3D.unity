@@ -314,6 +314,8 @@ MonoBehaviour:
   gravity: 9.8
   jumpSpeed: 7
   jumpKeycode: 32
+  keyRun: 304
+  speedRun: 1.5
 --- !u!4 &29222389
 Transform:
   m_ObjectHideFlags: 0
