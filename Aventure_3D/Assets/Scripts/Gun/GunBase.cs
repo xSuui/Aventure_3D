@@ -40,7 +40,7 @@ public class GunBase : MonoBehaviour
     }*/
     #endregion 
 
-    IEnumerator ShootCoroutine()
+    protected virtual IEnumerator ShootCoroutine()
     {
         while (isShooting) // Verificamos a variável isShooting em vez de true.
         {
