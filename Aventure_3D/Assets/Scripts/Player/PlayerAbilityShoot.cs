@@ -7,11 +7,12 @@ public class PlayerAbilityShoot : PlayerAbilityBase
 {
     public List<UIGunUpdater> uIGunUpdaters;
 
-    public GunBase gunBase;
+    public GunBase[] gunPrefabs;
     public Transform gunPosition;
 
     private GunBase _currentGun;
-
+    private GunBase[] gunInstances;    
+    
     protected override void Init()
     {
         base.Init();
@@ -20,13 +21,42 @@ public class PlayerAbilityShoot : PlayerAbilityBase
 
         inputs.Gameplay.Shoot.performed += cts => startShoot();
         inputs.Gameplay.Shoot.canceled += cts => canceltShoot();
+
+        inputs.Gameplay.ChangeGun1.performed += cts => ChangeGun(0);
+        inputs.Gameplay.ChangeGun2.performed += cts => ChangeGun(1);
     }
 
     private void CreateGun()
     {
-        _currentGun = Instantiate(gunBase, gunPosition);
+        gunInstances = new GunBase[gunPrefabs.Length];
 
-        _currentGun.transform.localPosition = _currentGun.transform.localEulerAngles = Vector3.zero;
+        for (int  i = 0; i < gunPrefabs.Length; ++i)
+        {
+            gunInstances[i] = Instantiate(gunPrefabs[i], gunPosition);
+            gunInstances[i].transform.localPosition = gunInstances[i].transform.localEulerAngles = Vector3.zero;
+        }
+
+        if(gunInstances.Length > 0 )
+        {
+            _currentGun = gunInstances[0];
+        }
+    }
+
+    private void ChangeGun(int index)
+    {
+        if(gunInstances == null || index >= gunInstances.Length)
+        {
+            return;
+        }
+
+        for (int i = 0; i < gunInstances.Length; ++i)
+        {
+            gunInstances[i].gameObject.SetActive(index == i);
+            if(index == i)
+            {
+                _currentGun = gunInstances[i];
+            }
+        }
     }
 
     private void startShoot()

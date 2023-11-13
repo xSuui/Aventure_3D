@@ -347,7 +347,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIGunUpdaters: []
-  gunBase: {fileID: 1794943294584659264, guid: 119b82ac11bbfa8479193963d4dad6d4, type: 3}
+  gunPrefabs:
+  - {fileID: 1794943294584659264, guid: 119b82ac11bbfa8479193963d4dad6d4, type: 3}
+  - {fileID: 3346865525033807633, guid: c11b824631a02df49ade85e839ff9869, type: 3}
   gunPosition: {fileID: 1414611044}
 --- !u!1001 &40585165
 PrefabInstance:
