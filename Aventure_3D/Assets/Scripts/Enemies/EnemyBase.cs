@@ -8,7 +8,9 @@ namespace Enemy
 { 
     public class EnemyBase : MonoBehaviour, IDamageable
     {
-        public Collider collider;
+        public Collider _collider;
+        public FlashColor flashColor;
+        public ParticleSystem _particleSystem;
         public float startLife = 10f;
 
         [SerializeField] private float _currentLife;
@@ -46,13 +48,16 @@ namespace Enemy
 
         protected virtual void OnKill() 
         {
-            if (collider != null) collider.enabled = false;
+            if (_collider != null) _collider.enabled = false;
             Destroy(gameObject, 3f);
             PlayAnimationByTrigger(AnimationType.DEATH);
         }
 
         public void OnDamage(float f)
         {
+            if (flashColor != null) flashColor.Flash();
+            if (_particleSystem != null) _particleSystem.Emit(15);
+
             _currentLife -= f;
             
             if(_currentLife <= 0)
