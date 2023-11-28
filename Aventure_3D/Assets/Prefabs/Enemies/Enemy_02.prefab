@@ -4816,7 +4816,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a8c11a0fa2f91b1499e0dd549bd27b70, type: 2}
+  - {fileID: 2100000, guid: b452e1621517587489fa3f911bd9d5cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4871,9 +4871,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6494444013700644681}
-  - component: {fileID: 6494444013700644694}
   - component: {fileID: 6494444013700644680}
   - component: {fileID: 6494444013700644683}
+  - component: {fileID: 7242594409790362293}
   m_Layer: 0
   m_Name: Enemy_02
   m_TagString: Untagged
@@ -4897,27 +4897,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6494444013700644694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6494444013700644695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a8039bcce6e0c940bfd9571f27099e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collider: {fileID: 6494444013700644680}
-  flashColor: {fileID: 0}
-  _particleSystem: {fileID: 6494444012919817571}
-  startLife: 10
-  _currentLife: 0
-  _animationBase: {fileID: 6494444013700644683}
-  startAnimationDuration: 0.2
-  starAnimationEase: 27
-  startWithBornAnimation: 1
 --- !u!65 &6494444013700644680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4943,7 +4922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa86305547915db4e8411e580549b37e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 8890308640830904710}
   animationSetups:
   - animationType: 1
     trigger: Idle
@@ -4953,6 +4932,30 @@ MonoBehaviour:
     trigger: Attack
   - animationType: 4
     trigger: Death
+--- !u!114 &7242594409790362293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6494444013700644695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c3c0ead65e4e54f8bedfb8bcb83556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 6494444013700644680}
+  flashColor: {fileID: 1632363964004719820}
+  _particleSystem: {fileID: 6494444012919817571}
+  startLife: 10
+  _currentLife: 0
+  _animationBase: {fileID: 6494444013700644683}
+  startAnimationDuration: 0.2
+  starAnimationEase: 27
+  startWithBornAnimation: 1
+  waypoints: []
+  minDistance: 1
+  speed: 1
 --- !u!1 &6494444014164504421
 GameObject:
   m_ObjectHideFlags: 0
@@ -4991,6 +4994,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6494444014164504420}
     m_Modifications:
+    - target: {fileID: 2730220799464687934, guid: 8bec79f815163ae43b0faf61a3b8baca, type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 8368412002957639733}
     - target: {fileID: 6281779893053664936, guid: 8bec79f815163ae43b0faf61a3b8baca, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5062,3 +5069,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6281779893053664936, guid: 8bec79f815163ae43b0faf61a3b8baca, type: 3}
   m_PrefabInstance: {fileID: 3694327434290632178}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &8368412002957639733 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5144924261696689607, guid: 8bec79f815163ae43b0faf61a3b8baca, type: 3}
+  m_PrefabInstance: {fileID: 3694327434290632178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8890308640830904710 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5198380618090564724, guid: 8bec79f815163ae43b0faf61a3b8baca, type: 3}
+  m_PrefabInstance: {fileID: 3694327434290632178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1632363964004719820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2730220799464687934, guid: 8bec79f815163ae43b0faf61a3b8baca, type: 3}
+  m_PrefabInstance: {fileID: 3694327434290632178}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b685189b26312694e8e29faa96912978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
