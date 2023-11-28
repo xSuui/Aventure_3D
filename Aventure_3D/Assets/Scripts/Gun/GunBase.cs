@@ -60,7 +60,7 @@ public class GunBase : MonoBehaviour
         projectile.speed = speed;
     }
 
-    public void startShoot()
+    public void StartShoot()
     {
         StopShoot();
 
