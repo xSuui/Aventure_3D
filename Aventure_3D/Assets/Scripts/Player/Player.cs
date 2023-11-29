@@ -24,7 +24,10 @@ public class Player : MonoBehaviour//, IDamageable
     [Header("Flash")]
     public List<FlashColor> flashColors;
 
+
+    [Header("Life")]
     public HealthBase healthBase;
+    public UIFillUpdater uiFillUpdater;
 
     private bool _alive = true;
 
@@ -38,8 +41,9 @@ public class Player : MonoBehaviour//, IDamageable
         OnValidate();
 
         healthBase.OnDamage += Damage;
-        healthBase.OnDamage += OnKill;
+        healthBase.OnKill += OnKill;
     }
+    
 
 
     #region Life
