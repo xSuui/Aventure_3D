@@ -310,6 +310,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d7443e1f7fe8e4ab8879c9beb33c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders:
+  - {fileID: 29222387}
+  - {fileID: 29222391}
   animator: {fileID: 643351146}
   characterController: {fileID: 29222387}
   speed: 10
@@ -7093,7 +7096,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175683668}
-  m_LocalRotation: {x: 0.24446768, y: 0.000000018653607, z: -0.0000000047029025, w: 0.9696575}
+  m_LocalRotation: {x: 0.24446768, y: -0.000000018653607, z: 0.0000000047029025, w: 0.9696575}
   m_LocalPosition: {x: 403.73, y: 0.23999977, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9134,7 +9137,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.24446768, y: 0.000000018653607, z: -0.0000000047029025, w: 0.9696575}
+  m_LocalRotation: {x: 0.24446768, y: -0.000000018653607, z: 0.0000000047029025, w: 0.9696575}
   m_LocalPosition: {x: 403.73, y: 0.23999977, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
