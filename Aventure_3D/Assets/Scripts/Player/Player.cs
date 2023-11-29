@@ -54,7 +54,23 @@ public class Player : MonoBehaviour//, IDamageable
             _alive = false;
             animator.SetTrigger("Death");
             colliders.ForEach(i => i.enabled = false);
+
+            Invoke(nameof(Revive), 3f);
         }
+    }
+
+    private void Revive()
+    {
+        _alive = true;
+        healthBase.ResetLife();
+        animator.SetTrigger("Revive");
+        Respawn();
+        Invoke(nameof(TurnOnColliders), .1f);
+    }
+
+    private void TurnOnColliders()
+    {
+        colliders.ForEach(i => i.enabled = true);
     }
 
     public void Damage(HealthBase h)
@@ -68,6 +84,7 @@ public class Player : MonoBehaviour//, IDamageable
     }
     #endregion
 
+    #region teste
     void Update()
     {
         transform.Rotate(0, Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime, 0);
@@ -107,13 +124,28 @@ public class Player : MonoBehaviour//, IDamageable
          
         animator.SetBool("Run", inputAxisVertical != 0);
 
-        /*if (inputAxisVertical != 0)
-        {
-            animator.SetBool("Run", true);
-        }
-        else
-        {
-            animator.SetBool("Run", false);
-        }*/
     }
+    #endregion 
+
+    [NaughtyAttributes.Button]
+    public void Respawn()
+    {
+        if(CheckpointManager.Instance.HasCheckpoint())
+        {
+            transform.position = CheckpointManager.Instance.GetPositionFromLastCheckpoint();
+        }
+    }
+
 }
+
+
+#region code aula
+/*if (inputAxisVertical != 0)
+{
+    animator.SetBool("Run", true);
+}
+else
+{
+    animator.SetBool("Run", false);
+}*/
+#endregion
