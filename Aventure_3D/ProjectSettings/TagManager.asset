@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - PosProcessing
+  - PostProcessing
   layers:
   - Default
   - TransparentFX
@@ -12,9 +14,9 @@ TagManager:
   - 
   - Water
   - UI
+  - PostProcessing
   - 
-  - 
-  - 
+  - PosProcessing
   - 
   - 
   - 
@@ -41,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PosProcessing
+    uniqueID: 2164075915
+    locked: 0
+  - name: PostProcessing
+    uniqueID: 174295159
     locked: 0
