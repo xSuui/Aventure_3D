@@ -4,33 +4,71 @@ using UnityEngine;
 using TMPro;
 using Ebac.Core.Singleton;
 
-public class IitemManager : Singleton<IitemManager>
+namespace Itens
 {
-    public SOInt coins;
-    public TextMeshProUGUI uiTextCoins;
-
-
-    private void Start()
+    public enum ItemType
     {
-        Reset();
+        COIN,
+        LIFE_PACK
     }
 
-    private void Reset()
+    public class IitemManager : Singleton<IitemManager>
     {
-        coins.value = 0;
-        UpdateUI();
+        public List<ItemSetup> itemSetups;
+
+
+        private void Start()
+        {
+            Reset();
+        }
+
+        private void Reset()
+        {
+            foreach(var i in itemSetups)
+            {
+                i.soInt.value = 0;
+            }
+        }
+
+        public void AddType(ItemType itemType, int amount = 1)
+        {
+            if (amount < 0) return;
+
+            itemSetups.Find(i => i.itemType == itemType).soInt.value += amount;
+        }
+
+        public void RemoveByType(ItemType itemType, int amount = -1)
+        {
+            if (amount > 0) return;
+
+            var item = itemSetups.Find(i => i.itemType == itemType);
+            item.soInt.value -= amount;
+
+            if (item.soInt.value < 0) item.soInt.value = 0;
+        }
+
+        [NaughtyAttributes.Button]
+        private void AddCoin()
+        {
+            AddType(ItemType.COIN);
+        }
+        
+        [NaughtyAttributes.Button]
+        private void AddLifePack()
+        {
+            AddType(ItemType.LIFE_PACK);
+        }
+
+        
+
+        
     }
 
-    public void AddCoins(int amount = 1)
+    [System.Serializable]
+    public class ItemSetup
     {
-        coins.value += amount;
-        UpdateUI();
+        public ItemType itemType;
+        public SOInt soInt;
     }
 
-    private void UpdateUI()
-    {
-        //uiTextCoins.text = coins.ToString();
-        //UIInGameManager.Instance.UpdateTextCoins(coins.ToString());
-        //UIInGameManager.UpdateTextCoins(coins.value.ToString());
-    }
 }
