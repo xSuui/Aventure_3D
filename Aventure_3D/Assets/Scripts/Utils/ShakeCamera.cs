@@ -11,9 +11,9 @@ public class ShakeCamera : Singleton<ShakeCamera>
     public float shakeTime;
 
     [Header("Shake Values")]
-    public float amplitude = 3f;
-    public float frequency = 3f;
-    public float time = .2f;
+    public float amplitude = 2f;
+    public float frequency = 1f;
+    public float time = .1f;
 
 
     [NaughtyAttributes.Button]

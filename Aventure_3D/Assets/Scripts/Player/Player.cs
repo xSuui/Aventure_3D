@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Player : MonoBehaviour//, IDamageable
 {
@@ -31,6 +32,8 @@ public class Player : MonoBehaviour//, IDamageable
 
     private bool _alive = true;
 
+    private ShakeCamera shakeCamera;
+
     public void OnValidate()
     {
         if (healthBase == null) healthBase = GetComponent<HealthBase>();
@@ -39,6 +42,8 @@ public class Player : MonoBehaviour//, IDamageable
     private void Awake()
     {
         OnValidate();
+
+        shakeCamera = ShakeCamera.Instance;
 
         healthBase.OnDamage += Damage;
         healthBase.OnKill += OnKill;
@@ -77,6 +82,8 @@ public class Player : MonoBehaviour//, IDamageable
     {
         flashColors.ForEach(i => i.Flash());
         EffectsManager.Instance.ChangeVignette();
+
+        shakeCamera.Shake();
     }
 
     public void Damage(float damage, Vector3 dir)
