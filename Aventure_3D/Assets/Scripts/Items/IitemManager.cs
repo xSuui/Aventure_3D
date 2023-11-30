@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ebac.Core.Singleton;
 
-namespace Itens
+namespace Items
 {
     public enum ItemType
     {
@@ -30,7 +30,7 @@ namespace Itens
             }
         }
 
-        public void AddType(ItemType itemType, int amount = 1)
+        public void AddByType(ItemType itemType, int amount = 1)
         {
             if (amount < 0) return;
 
@@ -50,13 +50,13 @@ namespace Itens
         [NaughtyAttributes.Button]
         private void AddCoin()
         {
-            AddType(ItemType.COIN);
+            AddByType(ItemType.COIN);
         }
         
         [NaughtyAttributes.Button]
         private void AddLifePack()
         {
-            AddType(ItemType.LIFE_PACK);
+            AddByType(ItemType.LIFE_PACK);
         }
 
         

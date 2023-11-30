@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Itens;
+using Items;
 
 public class ItemCollectableCoin : ItemCollectableBase
 {
@@ -10,7 +10,7 @@ public class ItemCollectableCoin : ItemCollectableBase
     protected override void OnCollect()
     {
         base.OnCollect();
-        IitemManager.Instance.AddType(ItemType.COIN);
+        IitemManager.Instance.AddByType(ItemType.COIN);
         collider.enabled = false;
         
     }
