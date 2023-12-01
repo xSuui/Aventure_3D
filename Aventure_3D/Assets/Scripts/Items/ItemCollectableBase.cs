@@ -63,7 +63,7 @@ namespace Items
             }
             if (audioSource != null) audioSource.Play();
 
-            IitemManager.Instance.AddByType(itemType);
+            ItemManager.Instance.AddByType(itemType);
         }
     }
 

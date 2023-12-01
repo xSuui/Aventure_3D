@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Ebac.Core.Singleton;
 
-public class Player : MonoBehaviour//, IDamageable
+public class Player : Singleton<Player> //, IDamageable
 {
     public List<Collider> colliders;
     public Animator animator;
@@ -39,8 +40,9 @@ public class Player : MonoBehaviour//, IDamageable
         if (healthBase == null) healthBase = GetComponent<HealthBase>();
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         OnValidate();
 
         shakeCamera = ShakeCamera.Instance;
@@ -48,8 +50,8 @@ public class Player : MonoBehaviour//, IDamageable
         healthBase.OnDamage += Damage;
         healthBase.OnKill += OnKill;
     }
-    
 
+ 
 
     #region Life
     private void OnKill(HealthBase h)

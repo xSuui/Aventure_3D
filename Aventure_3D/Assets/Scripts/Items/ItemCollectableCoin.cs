@@ -10,7 +10,7 @@ public class ItemCollectableCoin : ItemCollectableBase
     protected override void OnCollect()
     {
         base.OnCollect();
-        IitemManager.Instance.AddByType(ItemType.COIN);
+        ItemManager.Instance.AddByType(ItemType.COIN);
         collider.enabled = false;
         
     }

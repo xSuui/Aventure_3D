@@ -19,7 +19,7 @@ namespace Items
         
         private void CreateItems()
         {
-            foreach(var setup in IitemManager.Instance.itemSetups)
+            foreach(var setup in ItemManager.Instance.itemSetups)
             {
                 var item = Instantiate(prefabLayout, container);
                 item.Load(setup);
