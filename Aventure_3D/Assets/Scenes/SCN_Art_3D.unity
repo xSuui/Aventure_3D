@@ -328,6 +328,7 @@ MonoBehaviour:
   - {fileID: 644653302}
   healthBase: {fileID: 29222392}
   uiFillUpdater: {fileID: 847032143}
+  _clothChanger: {fileID: 1100771611}
 --- !u!4 &29222389
 Transform:
   m_ObjectHideFlags: 0
@@ -2795,11 +2796,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 469779968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a5b6828be607d44abbcc27ff1e84090, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f5326a8dcb5ef548ba2136557b5fd78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clothType: 0
+  duration: 2
   compareTag: Player
+  targetSpeed: 25
 --- !u!4 &469779971
 Transform:
   m_ObjectHideFlags: 0
@@ -4546,7 +4549,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737242850}
-  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583566, w: 0.17029092}
+  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583564, w: 0.17029096}
   m_LocalPosition: {x: -14.686127, y: 52.0552, z: -91.503334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9981,7 +9984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clothSetups:
   - clothType: 0
-    text: {fileID: 2800000, guid: bef4aaffaffbada4485a5850daed036f, type: 3}
+    texture: {fileID: 2800000, guid: bef4aaffaffbada4485a5850daed036f, type: 3}
 --- !u!4 &1420187356
 Transform:
   m_ObjectHideFlags: 0
@@ -10661,7 +10664,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583566, w: 0.17029092}
+  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583564, w: 0.17029096}
   m_LocalPosition: {x: 403.73, y: -5.760002, z: 22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

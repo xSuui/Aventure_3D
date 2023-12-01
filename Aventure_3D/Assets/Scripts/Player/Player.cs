@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using Ebac.Core.Singleton;
+using Cloth;
 
 public class Player : Singleton<Player> //, IDamageable
 {
@@ -34,6 +35,9 @@ public class Player : Singleton<Player> //, IDamageable
     private bool _alive = true;
 
     private ShakeCamera shakeCamera;
+
+    [Space]
+    [SerializeField] private ClothChanger _clothChanger;
 
     public void OnValidate()
     {
@@ -157,6 +161,19 @@ public class Player : Singleton<Player> //, IDamageable
         speed = localSpeed;
         yield return new WaitForSeconds(duration);
         speed = defaultSpeed;
+    }
+
+    public void ChangeTexture(ClothSetup setup, float duration)
+    {
+        StartCoroutine(ChangeTextureCoroutine(setup, duration));
+    }
+
+    IEnumerator ChangeTextureCoroutine(ClothSetup setup, float duration)
+    {
+        _clothChanger.ChangeTexture(setup);
+        yield return new WaitForSeconds(duration);
+        _clothChanger.ResetTexture();
+        
     }
 
 }
