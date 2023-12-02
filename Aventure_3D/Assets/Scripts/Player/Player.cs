@@ -42,6 +42,14 @@ public class Player : Singleton<Player> //, IDamageable
     public void OnValidate()
     {
         if (healthBase == null) healthBase = GetComponent<HealthBase>();
+
+        /*if (healthBase == null)
+        {
+            healthBase = GetComponent<HealthBase>();
+            if (healthBase == null)
+                Debug.LogError("HealthBase component not found on the same GameObject or parent.");
+        }*/
+
     }
 
     protected override void Awake()
@@ -86,10 +94,22 @@ public class Player : Singleton<Player> //, IDamageable
 
     public void Damage(HealthBase h)
     {
+        /*if (healthBase == null)
+        {
+            Debug.LogError("healthBase is null in Damage method");
+            return;
+        }
+
         flashColors.ForEach(i => i.Flash());
         EffectsManager.Instance.ChangeVignette();
 
-        shakeCamera.Shake();
+        shakeCamera.Shake();*/
+
+
+        flashColors.ForEach(i => i.Flash());
+        EffectsManager.Instance.ChangeVignette();
+
+        //shakeCamera.Shake();
     }
 
     public void Damage(float damage, Vector3 dir)
