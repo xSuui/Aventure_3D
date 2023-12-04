@@ -145,6 +145,8 @@ MonoBehaviour:
   speed: 50
   tagsToHit:
   - Enemy
+  tagsToIgnore:
+  - Player
 --- !u!54 &-872496739779161375
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -36,8 +36,9 @@ public class HealthBase : MonoBehaviour, IDamageable
 
     protected virtual void Kill()
     {
-        if(destroyOnKill)
-            Destroy(gameObject, 3f);
+        Debug.Log("Kill method called.");
+        if (destroyOnKill)
+            Destroy(gameObject); //Destroy(gameObject, 3f);
 
         OnKill?.Invoke(this);
     }

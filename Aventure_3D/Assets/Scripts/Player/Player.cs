@@ -63,7 +63,22 @@ public class Player : Singleton<Player> //, IDamageable
         healthBase.OnKill += OnKill;
     }
 
- 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            // Desative temporariamente a gravidade
+            characterController.detectCollisions = false;
+            Invoke("EnableGravity", 0.5f);  // Ative a gravidade após meio segundo (ajuste conforme necessário)
+        }
+    }
+
+
+    private void EnableGravity()
+    {
+        characterController.detectCollisions = true;
+    }
+
 
     #region Life
     private void OnKill(HealthBase h)

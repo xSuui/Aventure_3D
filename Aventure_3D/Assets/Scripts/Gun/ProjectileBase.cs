@@ -12,6 +12,8 @@ public class ProjectileBase : MonoBehaviour
 
     public List<string> tagsToHit;
 
+    public List<string> tagsToIgnore;
+
     private void Awake()
     {
         Destroy(gameObject, timeToDestroy);
@@ -22,8 +24,20 @@ public class ProjectileBase : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
+    private IEnumerator DelayedDestroy()
+    {
+        yield return new WaitForSeconds(0.5f); // Ajuste este valor conforme necessário
+        Destroy(gameObject);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+        
+        if (tagsToIgnore.Contains(collision.gameObject.tag))
+        {
+            return;
+        }
+
         foreach(var t in tagsToHit)
         {
             if(collision.transform.tag == t)
@@ -40,11 +54,14 @@ public class ProjectileBase : MonoBehaviour
                     damageable.Damage(damageAmount, dir);
                 }
 
-                break;
-            
+                StartCoroutine(DelayedDestroy()); // Usar co-rotina para atrasar a destruição
+                return;
+                //break;
+
             }
 
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
+
 }
