@@ -33,6 +33,7 @@ public class Player : Singleton<Player> //, IDamageable
     public UIFillUpdater uiFillUpdater;
 
     private bool _alive = true;
+    private bool _jumping = false;
 
     private ShakeCamera shakeCamera;
 
@@ -144,10 +145,21 @@ public class Player : Singleton<Player> //, IDamageable
 
         if (characterController.isGrounded)
         {
+            if(_jumping)
+            {
+                _jumping = false;
+                animator.SetTrigger("Land");
+            }
             vSpeed = 0;
             if (Input.GetKeyDown(jumpKeycode))
             {
                 vSpeed = jumpSpeed;
+
+                if (!_jumping)
+                {
+                    _jumping = true;
+                    animator.SetTrigger("Jump");
+                }
             }
         }
 
