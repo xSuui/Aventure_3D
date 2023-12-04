@@ -9,6 +9,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
 
     public GunBase[] gunPrefabs;
     public Transform gunPosition;
+    public FlashColor _flashColor;
 
     private GunBase _currentGun;
     private GunBase[] gunInstances;    
@@ -62,6 +63,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     private void StartShoot()
     {
         _currentGun.StartShoot();
+        _flashColor?.Flash();
         Debug.Log("Start Shoot");
     }
     private void CanceltShoot()
