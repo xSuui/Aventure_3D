@@ -4885,7 +4885,7 @@ MonoBehaviour:
   healthBase: {fileID: 2376817205516722231}
   shakeDuration: 0.1
   shakeForce: 1
-  dropCoinsAmount: 5
+  dropCoinsAmount: 1
   coinPrefab: {fileID: 8502118670589389083, guid: 84d92345bb530e042aa7ff0e036bc65b, type: 3}
   dropPosition: {fileID: 2376817205162107778}
 --- !u!114 &2376817205516722231
