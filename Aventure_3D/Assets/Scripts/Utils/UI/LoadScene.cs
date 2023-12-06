@@ -5,7 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    public void Load(int i)
+    /*public void LoadLevel(int level)
+    {
+        SceneManager.LoadScene(level);
+    }*/
+
+
+     public void Load(int i)
     {
         Debug.Log("Load(int) chamado com o argumento: " + i);
         SceneManager.LoadScene(i);

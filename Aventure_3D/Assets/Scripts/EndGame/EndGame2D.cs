@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndGame : MonoBehaviour
+public class EndGame2D : MonoBehaviour
 {
     /*public string tagtoCompare = "Player";
     public GameObject uiEndgame;
