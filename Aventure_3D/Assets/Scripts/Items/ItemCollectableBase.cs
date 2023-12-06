@@ -15,7 +15,7 @@ namespace Items
         public float timeToHide = 3;
         public GameObject graphicItem;
 
-        public new Collider collider;
+        public new Collider[] colliders;
 
         [Header("Sounds")]
         public AudioSource audioSource;
@@ -23,6 +23,7 @@ namespace Items
         private void Awake()
         {
             //if (particleSystem != null) particleSystem.transform.SetParent(null);
+            colliders = GetComponents<Collider>();
         }
 
         private void OnTriggerEnter(Collider collision)
@@ -35,8 +36,16 @@ namespace Items
 
         protected virtual void HideItens()
         {
+            if (colliders != null)
+            {
+                foreach(Collider collider in colliders)
+                {
+                    collider.enabled = false;
+                }
+            }
+
             //Debug.Log("Collect");
-            if (collider != null) collider.enabled = false;
+            //if (collider != null) collider.enabled = false;
 
             if (graphicItem != null) graphicItem.SetActive(false);
             Invoke("HideObject", timeToHide);
