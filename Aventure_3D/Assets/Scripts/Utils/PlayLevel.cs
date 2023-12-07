@@ -7,14 +7,14 @@ public class PlayLevel : MonoBehaviour
 {
     public TextMeshProUGUI uiTextName;
 
-    private void Awake()
+    private void Start()
     {
         SaveManager.Instance.FileLoaded += OnLoad;
     }
 
     public void OnLoad(SaveSetup setup)
     {
-        uiTextName.text = "Play" + setup.lastLevel + 1;
+        uiTextName.text = "Play" +  (setup.lastLevel + 1);
     }
 
     private void OnDestroy()

@@ -15,13 +15,27 @@ public class SaveManager : Singleton<SaveManager>
 
     public Action<SaveSetup> FileLoaded;
 
+    public SaveSetup Setup
+    {
+        get { return _saveSetup; }
+    }
+
     protected override void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void CreateNewSave()
+    {
         _saveSetup = new SaveSetup();
-        _saveSetup.lastLevel = 2;
+        _saveSetup.lastLevel = 0;
         _saveSetup.playerName = "Samuel";
+    }
+
+    private void Start()
+    {
+        Invoke(nameof(Load), .1f);
     }
 
     #region Save
@@ -68,11 +82,19 @@ public class SaveManager : Singleton<SaveManager>
     {
         string fileLoaded = "";
 
-        if (File.Exists(_path)) fileLoaded = File.ReadAllText(_path);
+        if (File.Exists(_path))
+        {
 
-        _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
+             fileLoaded = File.ReadAllText(_path);
+            _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
+            lastLevel = _saveSetup.lastLevel;
 
-        lastLevel = _saveSetup.lastLevel;
+        } 
+        else
+        {
+            CreateNewSave();
+            Save();
+        }
 
         FileLoaded.Invoke(_saveSetup);
     }
