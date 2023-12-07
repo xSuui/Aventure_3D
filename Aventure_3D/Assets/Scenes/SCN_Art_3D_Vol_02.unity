@@ -547,7 +547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29222386}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -89.8, y: 55.02, z: -18.73}
+  m_LocalPosition: {x: -4.1, y: 52.8, z: -39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1414611044}
@@ -12635,7 +12635,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690403933}
-  m_LocalRotation: {x: 0.12916523, y: -0.8250341, z: 0.20949854, w: 0.50867045}
+  m_LocalRotation: {x: 0.06336376, y: 0.9365676, z: -0.23781991, w: 0.24953523}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13169,7 +13169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737242850}
   m_LocalRotation: {x: 0.06583563, y: -0.17029092, z: 0.011403632, w: 0.983126}
-  m_LocalPosition: {x: -89.79999, y: 58.02, z: -25.730003}
+  m_LocalPosition: {x: -4.100006, y: 57.5, z: -46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 241902242}
@@ -19330,7 +19330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837364600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -58.52887, y: 74.020004, z: -3.010048}
+  m_LocalPosition: {x: -21.514313, y: 71.8, z: -8.639793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 690403935}
@@ -21989,8 +21989,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989121555}
-  m_LocalRotation: {x: 0.24446768, y: -0.000000018653607, z: 0.0000000047029025, w: 0.9696575}
-  m_LocalPosition: {x: -89.79999, y: 64.020004, z: -31.730003}
+  m_LocalRotation: {x: 0.24446768, y: 0.000000018653607, z: -0.0000000047029025, w: 0.9696575}
+  m_LocalPosition: {x: -4.100006, y: 61.8, z: -52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 655946082}
@@ -22643,7 +22643,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076177138}
-  m_LocalRotation: {x: 0.11060253, y: -0.8320996, z: 0.17939095, w: 0.5130266}
+  m_LocalRotation: {x: 0.0542576, y: 0.94458836, z: -0.20364217, w: 0.2516723}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -22841,7 +22841,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096723673}
-  m_LocalRotation: {x: 0.11989137, y: -0.8287083, z: 0.19445695, w: 0.51093566}
+  m_LocalRotation: {x: 0.058814358, y: 0.9407385, z: -0.22074488, w: 0.2506465}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -26621,8 +26621,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420232005}
-  m_LocalRotation: {x: 0.30517742, y: 0.000000016385558, z: -0.0000000052509983, w: 0.95229554}
-  m_LocalPosition: {x: -89.79999, y: 62.02, z: -25.730003}
+  m_LocalRotation: {x: 0.30517742, y: 0.00000001638556, z: -0.0000000052509987, w: 0.95229554}
+  m_LocalPosition: {x: -4.100006, y: 60.3, z: -46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1645516821}
@@ -27733,8 +27733,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.119891405, y: -0.8287082, z: 0.1944569, w: 0.5109357}
-  m_LocalPosition: {x: 359.88727, y: 16.2048, z: 110.493286}
+  m_LocalRotation: {x: 0.058814358, y: 0.9407385, z: -0.22074491, w: 0.2506465}
+  m_LocalPosition: {x: 396.90182, y: 13.984798, z: 104.86354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -36639,6 +36639,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_GroundRock07
       objectReference: {fileID: 0}
+    - target: {fileID: 6885129381473798860, guid: 435b8cb32aa668246ad07146724496fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 435b8cb32aa668246ad07146724496fd, type: 3}
 --- !u!4 &7426574995428428422 stripped
@@ -36656,6 +36660,10 @@ PrefabInstance:
     - target: {fileID: 2865259617798041249, guid: 3e26483ea67bad242b76de0971c6ac09, type: 3}
       propertyPath: m_Name
       value: PFB_GroundRock05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865259617798041249, guid: 3e26483ea67bad242b76de0971c6ac09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8391976400090115252, guid: 3e26483ea67bad242b76de0971c6ac09, type: 3}
       propertyPath: m_RootOrder

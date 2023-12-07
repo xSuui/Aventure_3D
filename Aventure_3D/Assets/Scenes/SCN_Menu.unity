@@ -1103,6 +1103,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4130534799474102201, guid: 0cab5e1380e7477488dade4b9f254def, type: 3}
   m_PrefabInstance: {fileID: 1616783112}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &758078483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758078481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64aba67961058404ebbfc36cf9ac0b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiTextName: {fileID: 1616783113}
 --- !u!1 &777961280
 GameObject:
   m_ObjectHideFlags: 0
@@ -3209,6 +3222,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cab5e1380e7477488dade4b9f254def, type: 3}
+--- !u!114 &1616783113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4062665598740492800, guid: 0cab5e1380e7477488dade4b9f254def, type: 3}
+  m_PrefabInstance: {fileID: 1616783112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1641408232
 GameObject:
   m_ObjectHideFlags: 0
@@ -4177,6 +4201,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1429249000395822560, guid: a1bd959dbdfd38642a6bb64cb0001bd0, type: 3}
+      propertyPath: _saveSetup.coins
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429249000395822560, guid: a1bd959dbdfd38642a6bb64cb0001bd0, type: 3}
+      propertyPath: _saveSetup.lastLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429249000395822560, guid: a1bd959dbdfd38642a6bb64cb0001bd0, type: 3}
+      propertyPath: _saveSetup.playerName
+      value: Samuel
+      objectReference: {fileID: 0}
     - target: {fileID: 1429249000395822561, guid: a1bd959dbdfd38642a6bb64cb0001bd0, type: 3}
       propertyPath: m_Name
       value: PFB_SaveManager
