@@ -36,6 +36,7 @@ public class GunShootLimit : GunBase
             else
             {
                 yield break;
+
             }
         }
     }
@@ -79,5 +80,10 @@ public class GunShootLimit : GunBase
     private void GetAllUIs()
     {
         uIGunUpdaters = GameObject.FindObjectsOfType<UIFillUpdater>().ToList();
+        for(int i = uIGunUpdaters.Count - 1; i > 0; --i)
+        {
+            if (uIGunUpdaters[i].type != UIFillUpdater.UpdaterType.AMMO)
+                uIGunUpdaters.RemoveAt(i);
+        }
     }
 }

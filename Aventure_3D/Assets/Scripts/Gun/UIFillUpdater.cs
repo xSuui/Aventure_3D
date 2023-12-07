@@ -6,6 +6,14 @@ using DG.Tweening;
 
 public class UIFillUpdater : MonoBehaviour
 {
+    public enum UpdaterType
+    {
+        AMMO,
+        LIFE
+    }
+
+    public UpdaterType type = UpdaterType.LIFE;
+
     public Image uiImage;
 
     [Header("Animation")]
