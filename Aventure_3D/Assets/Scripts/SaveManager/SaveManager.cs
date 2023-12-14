@@ -84,19 +84,36 @@ public class SaveManager : Singleton<SaveManager>
 
         if (File.Exists(_path))
         {
-
-             fileLoaded = File.ReadAllText(_path);
+            fileLoaded = File.ReadAllText(_path);
             _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
-            lastLevel = _saveSetup.lastLevel;
 
-        } 
+            // Check if _saveSetup is not null before accessing its members
+            if (_saveSetup != null)
+            {
+                lastLevel = _saveSetup.lastLevel;
+            }
+            else
+            {
+                // Handle the case when _saveSetup is null (log, throw exception, etc.)
+                // Example: Debug.LogError("SaveSetup is null after deserialization!");
+            }
+        }
         else
         {
             CreateNewSave();
             Save();
         }
 
-        FileLoaded.Invoke(_saveSetup);
+        // Check if FileLoaded event is not null before invoking it
+        if (FileLoaded != null)
+        {
+            FileLoaded.Invoke(_saveSetup);
+        }
+        else
+        {
+            // Handle the case when FileLoaded event is null (log, throw exception, etc.)
+            // Example: Debug.LogWarning("FileLoaded event is null!");
+        }
     }
 
     [NaughtyAttributes.Button]
@@ -120,3 +137,27 @@ public class SaveSetup
     public float health;
     public string playerName;
 }
+
+
+
+
+#region codigo aula
+/* string fileLoaded = "";
+
+ if (File.Exists(_path))
+ {
+
+      fileLoaded = File.ReadAllText(_path);
+     _saveSetup = JsonUtility.FromJson<SaveSetup>(fileLoaded);
+     lastLevel = _saveSetup.lastLevel;
+
+ } 
+ else
+ {
+     CreateNewSave();
+     Save();
+ }
+
+ //FileLoaded.Invoke(_saveSetup);
+*/
+#endregion
