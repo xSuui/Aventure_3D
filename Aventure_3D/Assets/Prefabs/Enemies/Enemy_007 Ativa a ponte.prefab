@@ -326,11 +326,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8039bcce6e0c940bfd9571f27099e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sFXType: 2
+  sFXType2: 0
   _collider: {fileID: 1416259178437782468}
   flashColor: {fileID: 1416259179558816912}
   _particleSystem: {fileID: 1416259179254764015}
   startLife: 10
   lookAtPlayer: 0
+  audioSource: {fileID: 0}
   _currentLife: 0
   _animationBase: {fileID: 1416259178437782471}
   startAnimationDuration: 0.2

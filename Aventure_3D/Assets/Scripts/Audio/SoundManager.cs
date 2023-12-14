@@ -34,7 +34,8 @@ public class SoundManager : Singleton<SoundManager>
     {
         TYPE_01,
         TYPE_02,
-        TYPE_03
+        TYPE_03,
+        TYPE_04
     }   
 
     [System.Serializable]
@@ -51,8 +52,9 @@ public class SoundManager : Singleton<SoundManager>
         NONE,
         TYPE_01,
         TYPE_02,
-        TYPE_03
-    }
+        TYPE_03,
+        TYPE_04
+}
 
     [System.Serializable]
     public class SFXSetup

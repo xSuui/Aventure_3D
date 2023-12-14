@@ -49,8 +49,14 @@ MonoBehaviour:
   - musicType: 1
     audioClip: {fileID: 8300000, guid: d8f7a78a964aa489aafb3749d805cd4b, type: 3}
   - musicType: 2
-    audioClip: {fileID: 8300000, guid: 6306498bbea9342a58ad61d5f7128830, type: 3}
+    audioClip: {fileID: 8300000, guid: 956ad2f73332544fd87365087825cc4f, type: 3}
   sfxSetups:
-  - sFXTyp: 0
-    audioClip: {fileID: 0}
+  - sFXTyp: 1
+    audioClip: {fileID: 8300000, guid: d0841eebed9944dd3b27de3ee7e6eb88, type: 3}
+  - sFXTyp: 2
+    audioClip: {fileID: 8300000, guid: 3a20c1f2fd4d44c4d9a6fabbec93be20, type: 3}
+  - sFXTyp: 3
+    audioClip: {fileID: 8300000, guid: b7db7ff580d9848ed8f011953f466b66, type: 3}
+  - sFXTyp: 4
+    audioClip: {fileID: 8300000, guid: ceede7a829d41470a86526620500b878, type: 3}
   musicSource: {fileID: 0}

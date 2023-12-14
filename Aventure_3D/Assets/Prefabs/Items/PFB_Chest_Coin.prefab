@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d347c87b7660f894381cdee3f7b55fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sFXType: 4
   keyCode: 122
   animator: {fileID: 2653022092930094771}
   triggerOpen: Open

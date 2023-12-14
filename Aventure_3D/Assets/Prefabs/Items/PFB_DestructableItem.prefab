@@ -4882,6 +4882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbea2b91f3a4c0441b527cf4dde6e285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sFXType: 3
   healthBase: {fileID: 2376817205516722231}
   shakeDuration: 0.1
   shakeForce: 1
