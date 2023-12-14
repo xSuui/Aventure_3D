@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a2c9904bab9464498b2640fabd2a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLife: 50
+  startLife: 10
   destroyOnKill: 0
   _currentLife: 0
   uiFillUpdater:
@@ -12702,7 +12702,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690403933}
-  m_LocalRotation: {x: 0.12916522, y: -0.8250341, z: 0.20949854, w: 0.5086704}
+  m_LocalRotation: {x: 0.1291652, y: -0.8250341, z: 0.20949854, w: 0.50867033}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -22837,7 +22837,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076177138}
-  m_LocalRotation: {x: 0.11060253, y: -0.8320996, z: 0.17939095, w: 0.5130266}
+  m_LocalRotation: {x: 0.110602535, y: -0.8320996, z: 0.17939097, w: 0.5130266}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -23035,7 +23035,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096723673}
-  m_LocalRotation: {x: 0.11989137, y: -0.8287083, z: 0.19445695, w: 0.51093566}
+  m_LocalRotation: {x: 0.11989139, y: -0.82870823, z: 0.19445692, w: 0.51093566}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -25521,10 +25521,7 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 643351146}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras:
-  - {fileID: 989121556}
-  - {fileID: 737242851}
-  - {fileID: 1420232006}
+  m_ChildCameras: []
   m_Instructions:
   - m_FullHash: -757307838
     m_VirtualCamera: {fileID: 737242851}

@@ -20,6 +20,7 @@ public class CheckpointManager : Singleton<CheckpointManager>
         if(i > lastChackPointKey)
         {
             lastChackPointKey = i;
+            SaveManager.Instance.SaveItems();
         }
     }
 
