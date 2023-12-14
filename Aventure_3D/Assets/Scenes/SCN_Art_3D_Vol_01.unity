@@ -12926,7 +12926,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690403933}
-  m_LocalRotation: {x: 0.12916528, y: -0.82503396, z: 0.20949854, w: 0.50867057}
+  m_LocalRotation: {x: 0.12916529, y: -0.82503396, z: 0.20949857, w: 0.50867057}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -22407,7 +22407,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989121555}
-  m_LocalRotation: {x: 0.24446768, y: -0.000000018653607, z: 0.0000000047029025, w: 0.9696575}
+  m_LocalRotation: {x: 0.24446768, y: 0.000000018653607, z: -0.0000000047029025, w: 0.9696575}
   m_LocalPosition: {x: -89.79999, y: 64.020004, z: -31.730003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -25745,7 +25745,10 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 643351146}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 989121556}
+  - {fileID: 737242851}
+  - {fileID: 1420232006}
   m_Instructions:
   - m_FullHash: -757307838
     m_VirtualCamera: {fileID: 737242851}
@@ -27038,7 +27041,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420232005}
-  m_LocalRotation: {x: 0.30517742, y: -0.000000016385558, z: 0.0000000052509983, w: 0.95229554}
+  m_LocalRotation: {x: 0.30517742, y: 0.000000016385561, z: -0.0000000052509987, w: 0.95229554}
   m_LocalPosition: {x: -89.79999, y: 62.02, z: -25.730003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -37203,13 +37206,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 601246622}
     m_Modifications:
     - target: {fileID: 5684444238005852089, guid: 559532872626b1e4784d2116083abd42, type: 3}
+      propertyPath: sfxSetups.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684444238005852089, guid: 559532872626b1e4784d2116083abd42, type: 3}
       propertyPath: sfxSetups.Array.data[0].sFXTyp
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5684444238005852089, guid: 559532872626b1e4784d2116083abd42, type: 3}
+      propertyPath: sfxSetups.Array.data[1].sFXTyp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684444238005852089, guid: 559532872626b1e4784d2116083abd42, type: 3}
       propertyPath: sfxSetups.Array.data[0].audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
+      objectReference: {fileID: 8300000, guid: d0841eebed9944dd3b27de3ee7e6eb88, type: 3}
+    - target: {fileID: 5684444238005852089, guid: 559532872626b1e4784d2116083abd42, type: 3}
+      propertyPath: sfxSetups.Array.data[1].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a20c1f2fd4d44c4d9a6fabbec93be20, type: 3}
     - target: {fileID: 5684444238005852089, guid: 559532872626b1e4784d2116083abd42, type: 3}
       propertyPath: musicSetups.Array.data[2].audioClip
       value: 

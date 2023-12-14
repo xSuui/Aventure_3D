@@ -9,6 +9,8 @@ namespace Enemy
 { 
     public class EnemyBase : MonoBehaviour, IDamageable
     {
+        public SFXType sFXType;
+
         public Collider _collider;
         public FlashColor flashColor;
         public ParticleSystem _particleSystem;
@@ -41,6 +43,11 @@ namespace Enemy
             _player = GameObject.FindObjectOfType<Player>();
         }
 
+        private void PlaySFX()
+        {
+            SFXPool.Instance.Play(sFXType);
+        }
+
         protected void ResetLife()
         {
             _currentLife = startLife;
@@ -56,6 +63,7 @@ namespace Enemy
 
         protected virtual void Kill()
         {
+            PlaySFX();
             OnKill();
         }
 
@@ -69,14 +77,15 @@ namespace Enemy
 
         public void OnDamage(float f)
         {
+
             if (flashColor != null) flashColor.Flash();
             if (_particleSystem != null) _particleSystem.Emit(15);
 
             transform.position -= transform.forward;
 
             _currentLife -= f;
-            
-            if(_currentLife <= 0)
+     
+            if (_currentLife <= 0)
             {
                 Kill();
             }
