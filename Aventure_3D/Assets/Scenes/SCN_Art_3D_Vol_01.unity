@@ -8759,6 +8759,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicType: 2
   audioSource: {fileID: 332554990}
+--- !u!1 &336490980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 336490981}
+  - component: {fileID: 336490982}
+  m_Layer: 0
+  m_Name: SFXPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &336490981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336490980}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 601246622}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &336490982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336490980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ad45868148a504ba7663c9178ba037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 10
 --- !u!1001 &336819018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11535,6 +11579,7 @@ Transform:
   m_Children:
   - {fileID: 25463338}
   - {fileID: 332554989}
+  - {fileID: 336490981}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12881,8 +12926,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690403933}
-  m_LocalRotation: {x: 0.14817457, y: -0.8165855, z: 0.2403305, w: 0.5034617}
-  m_LocalPosition: {x: 8.934631, y: 10, z: 4.491417}
+  m_LocalRotation: {x: 0.12916528, y: -0.82503396, z: 0.20949854, w: 0.50867057}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1808861009}
@@ -23016,7 +23061,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076177138}
-  m_LocalRotation: {x: 0.110602595, y: -0.8320995, z: 0.17939097, w: 0.5130267}
+  m_LocalRotation: {x: 0.1106026, y: -0.8320995, z: 0.17939097, w: 0.5130267}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -23214,7 +23259,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096723673}
-  m_LocalRotation: {x: 0.11989144, y: -0.8287081, z: 0.19445693, w: 0.51093584}
+  m_LocalRotation: {x: 0.119891435, y: -0.8287081, z: 0.19445693, w: 0.51093584}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -26993,7 +27038,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420232005}
-  m_LocalRotation: {x: 0.30517742, y: 0.000000016385561, z: -0.0000000052509987, w: 0.95229554}
+  m_LocalRotation: {x: 0.30517742, y: -0.000000016385558, z: 0.0000000052509983, w: 0.95229554}
   m_LocalPosition: {x: -89.79999, y: 62.02, z: -25.730003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -28105,7 +28150,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
-  m_LocalRotation: {x: 0.119891465, y: -0.8287081, z: 0.19445695, w: 0.5109358}
+  m_LocalRotation: {x: 0.11989146, y: -0.8287081, z: 0.19445695, w: 0.5109358}
   m_LocalPosition: {x: 359.88727, y: 16.2048, z: 110.49327}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -37157,6 +37202,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 601246622}
     m_Modifications:
+    - target: {fileID: 5684444238005852089, guid: 559532872626b1e4784d2116083abd42, type: 3}
+      propertyPath: sfxSetups.Array.data[0].sFXTyp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684444238005852089, guid: 559532872626b1e4784d2116083abd42, type: 3}
+      propertyPath: sfxSetups.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
     - target: {fileID: 5684444238005852089, guid: 559532872626b1e4784d2116083abd42, type: 3}
       propertyPath: musicSetups.Array.data[2].audioClip
       value: 

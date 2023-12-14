@@ -48,6 +48,7 @@ public class SoundManager : Singleton<SoundManager>
 
     public enum SFXType
     {
+        NONE,
         TYPE_01,
         TYPE_02,
         TYPE_03
