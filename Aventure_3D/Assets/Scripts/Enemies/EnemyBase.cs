@@ -17,6 +17,8 @@ namespace Enemy
         public float startLife = 10f;
         public bool lookAtPlayer = false;
 
+        public AudioSource audioSource;
+
         [SerializeField] private float _currentLife;
 
         [Header("Animation")]
